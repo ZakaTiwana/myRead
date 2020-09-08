@@ -1,0 +1,18 @@
+name: Deploy Workflow
+on:
+  push:
+    branches: [master]
+jobs:
+  job_one:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+      -name: testing personal server zakatiwana.tech ssh connection
+      uses: appleboy/ssh-action@master
+      with: 
+        host: zakatiwana.tech
+        username: zaka
+        key: ${{secrets.PERSONAL_SERVER_SECRET}} 
+        port: 22
+        script: |
+          echo "script run Sucessfully" > test.txt
