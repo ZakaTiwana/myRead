@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Test API</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <form id="send" class="form-group" action="http://localhost:3000/api/author/img/5e0353c4cce724225ce5b886"
+        method="POST" , enctype="multipart/form-data">
+        <label for="img">img File upload</label>
+        <input type="file" class="form-control-file" name="img" id="img" placeholder="" aria-describedby="fileHelpId">
+        <input id="submit" class="btn btn-secondary" value="upload" type="submit" />
+    </form>
+</body>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-ajaxy/1.6.1/scripts/jquery.ajaxy.js"></script>
+
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $('#send').submit(function (e) {
+            console.log("in herer");
+            e.preventDefault();
+            var formData = new FormData(this);
+            console.log(formData);
+            $.ajax({
+                url: "http://localhost:3000/api/author/img/5e0353c4cce724225ce5b886",
+                type: 'PUT',
+                data: formData,
+                success: function (data) {
+                    alert(data)
+                },
+                contentType: "multipart/form-data",
+                headers: {
+                    "Authorization": "Bearer " +
+                        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTAzMWFjM2Q5M2NjMzJlYzhmOThiOGUiLCJuYW1lIjoiemFrYSIsImpvaW5lZCI6IjIwMTktMTItMjVUMDg6MTY6MDMuNTI4WiIsImlhdCI6MTU3NzI2MTc3Mn0.VrnX3QTA4OeU6uXtzLvuhIgG71nZCpg6b_iBwMfvKK0"
+                },
+                async:true
+            })
+        })
+    });
+</script>
+
+
+
+</html>

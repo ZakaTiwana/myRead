@@ -1,0 +1,11 @@
+<div class="row" style="padding-left: 100px;">
+    
+    
+    <div class="col-sm-12">
+       
+        <button type="button" (click)="addbook()" class="btn btn-primary">+ Add Book</button>
+        <p class="h2" style="font-weight: bold;">My Books: </p>
+        <app-author-book *ngFor="let book of books" [book]="book" (deletebook)="deletebook($event)"></app-author-book>
+    </div>
+    
+</div>

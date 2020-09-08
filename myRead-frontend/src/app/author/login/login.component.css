@@ -1,0 +1,16 @@
+.login-form{
+    max-width: 500px;
+    margin: 2rem auto;
+    padding:2rem;
+    border-radius: 10px;
+
+    background-color: black;
+    color: white;
+}
+.login-form > *{
+    margin: 2rem auto;
+}
+.login-form__btn{
+    background-color:  #FF7315;
+    color:white;
+}

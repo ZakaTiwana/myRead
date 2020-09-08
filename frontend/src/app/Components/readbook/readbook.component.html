@@ -1,0 +1,7 @@
+<div class="row" style="padding-left: 20px;">
+    <div class="col-sm-12">
+        <p *ngFor="let chapter of chapters" class="h2"></p>
+        <button type="button" class="btn btn-primary" *ngFor="let chapter of chapters" (click)="getcontent(chapter)">{{chapter|uppercase}}</button>
+        <p   class="h5">{{content}}</p>
+    </div>
+</div>

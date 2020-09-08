@@ -1,0 +1,20 @@
+.navbar{
+    direction: ltr;
+
+    background-color: black;
+    color: white;
+    height: 6rem;
+}
+.navbar___home-logo{
+    height:5rem;
+}
+.navbar__btn{
+    color:white;
+    border-radius: 5px;
+    padding: 1rem;
+}
+
+.navbar__btn:hover,.navbar__btn:focus {
+    background-color:var(--orange);
+}
+

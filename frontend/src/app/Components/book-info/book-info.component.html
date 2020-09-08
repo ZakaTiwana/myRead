@@ -1,0 +1,78 @@
+<div class="row">
+    <div class="col-sm-2">
+        <app-side-bar></app-side-bar>
+    </div>
+
+    <div class="col-sm-6">
+        <img style="width:400px; height:auto;" src="http://localhost:3000{{book.img}}" class="img-fluid" />
+        <br>
+        <br>
+        <p class="h3" style="font-weight: bold;">{{book.title|uppercase}} </p>
+        <a routerLink="read-book" class="btn btn-info" role="button">Read Book</a>
+    </div>
+    <div class="col-sm-4">
+        <div class="rate">
+            <input type="radio" id="star5" name="rate" value="5" />
+            <label for="star5" title="text">5 stars</label>
+            <input type="radio" id="star4" name="rate" value="4" />
+            <label for="star4" title="text">4 stars</label>
+            <input type="radio" id="star3" name="rate" value="3" />
+            <label for="star3" title="text">3 stars</label>
+            <input type="radio" id="star2" name="rate" value="2" />
+            <label for="star2" title="text">2 stars</label>
+            <input type="radio" id="star1" name="rate" value="1" />
+            <label for="star1" title="text">1 star</label>
+        </div>
+        <br>
+        <br>
+        <br>
+        <p class="h3">Author: {{book.author_detail.name|uppercase}}</p>
+        <p class="h3" style="font-weight: bold;">Descripion: </p>
+        <p class="h4">{{book.details.description}}</p>
+        <p class="h3" style="font-weight: bold;"> Tags: </p>
+        <p class="h4" *ngFor="let singleTag of book.tag" style="display: inline;"> {{singleTag|uppercase}} </p>
+    </div>
+</div>
+<style>
+    .rate {
+        float: left;
+        height: 46px;
+
+    }
+
+    .rate:not(:checked)>input {
+        position: absolute;
+        top: -9999px;
+    }
+
+    .rate:not(:checked)>label {
+        float: right;
+        width: 1em;
+        overflow: hidden;
+        white-space: nowrap;
+        cursor: pointer;
+        font-size: 30px;
+        color: #ccc;
+    }
+
+    .rate:not(:checked)>label:before {
+        content: '★ ';
+    }
+
+    .rate>input:checked~label {
+        color: #ffc700;
+    }
+
+    .rate:not(:checked)>label:hover,
+    .rate:not(:checked)>label:hover~label {
+        color: #deb217;
+    }
+
+    .rate>input:checked+label:hover,
+    .rate>input:checked+label:hover~label,
+    .rate>input:checked~label:hover,
+    .rate>input:checked~label:hover~label,
+    .rate>label:hover~input:checked~label {
+        color: #c59b08;
+    }
+</style>

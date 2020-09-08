@@ -1,0 +1,42 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<div class="row">
+    <div class="col-sm-12">
+        <form class="form" style="padding-left: 100px;" class="form-horizontal" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="text">Title:</label>
+                <div class="col-sm-6">
+                    <input name="title" [(ngModel)]="title" type="text" class="form-control" id="title"
+                        placeholder="Enter Title">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="exampleFormControlTextarea1">Description</label>
+                <div class="col-sm-6">
+                    <textarea name="desc" [(ngModel)]="desc" class="form-control rounded-0"
+                        id="exampleFormControlTextarea1" rows="10"></textarea>
+
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="exampleFormControlSelect1">Choose tag</label>
+                <div class="col-sm-6">
+                    <select name="tag" [(ngModel)]="tag" class="form-control" id="exampleFormControlSelect1">
+                        <option>scifi</option>
+                        <option>thriller</option>
+                        <option>fantasy</option>
+                        <option>horror</option>
+                    </select>
+
+                </div>
+                
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-default">+ Add</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

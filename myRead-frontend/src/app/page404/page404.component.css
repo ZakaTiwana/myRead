@@ -1,0 +1,19 @@
+.page404{
+    max-width: 600px;
+    margin: 2rem auto;
+    padding:1rem;
+    color:white;
+    text-align: center;
+    border-radius: 10px;
+    background-color:black;
+}
+.page404>h1{
+    font-weight:bolder;
+    color:var(--orange);
+    margin: 2rem;
+}
+.page404__home{
+    font-weight: bold;
+    font-size: 2rem;
+    color:var(--orange);
+}

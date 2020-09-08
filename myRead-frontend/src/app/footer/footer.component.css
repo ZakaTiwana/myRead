@@ -1,0 +1,9 @@
+footer{
+    background-color: black;
+    color: white;
+    padding: 5rem 0;
+}
+
+.footer__logo{
+    height: 10rem;
+}

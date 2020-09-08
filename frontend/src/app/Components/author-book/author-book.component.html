@@ -1,0 +1,21 @@
+<div class="row">
+
+    <div class="col-sm-5">
+        <img style="width:400px; height:auto;" src="http://localhost:3000{{book.img}}" class="img-fluid" />
+        <br>
+        <br>
+        <p class="h3" style="font-weight: bold;">{{book.title|uppercase}} </p>
+        
+    </div>
+    <div class="col-sm-4">
+        <p class="h3">Author: {{book.author_detail.name|uppercase}}</p>
+        <p class="h3" style="font-weight: bold;">Descripion: </p>
+        <p *ngIf="book.details"  class="h4">{{book.details.description}}</p>
+    </div>
+    <div class="col-sm-1">
+        <button type="button" (click)="editbook()" class="btn btn-primary">Edit Book</button>
+        <br>
+        <br>
+        <button type="button" (click)="deletebook2()" class="btn btn-primary">Delete</button>
+    </div>
+</div>
